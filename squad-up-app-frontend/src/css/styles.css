@@ -51,4 +51,29 @@ body {
   color: #f5f5f5;
 }
 
+.home-page .hero-image {
+  background: url("../assets/squadUp.png") center;
+  min-height: 40vh;
+  box-shadow: 0em 0em 2em #35802d;
+  margin-top: 2em;
+}
+.home-page p {
+  color: #ffff;
+  font-weight: bold;
+  font-size: 3em;
+  padding: 0;
+  text-decoration: underline;
+}
+.home-page .banner {
+  background: black;
+  text-align: center;
+  min-height: 4vh;
+  max-width: 40vw;
+  position: relative;
+  top: 3em;
+  left: 24em;
+  padding: 2rem;
+  box-shadow: 0em 0em 2em #ffff;
+}
+
 /*# sourceMappingURL=styles.css.map */

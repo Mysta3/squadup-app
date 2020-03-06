@@ -1,18 +1,22 @@
-import React from 'react'
-import Header from './Header'
-import Post from './Post'
+import React from 'react';
+import Header from './Header';
+import Post from './Post';
 
 function Home() {
-    return (
-        <div>
-            <Header/>
-            <main>
-                <h1>Home Page</h1>
-                <p>Find Your Squad!</p>
-                <Post/>
-            </main>
+  return (
+    <div className="home-page">
+      <Header />
+      <main>
+        <div className="hero-image">
+          <div className='banner'>
+            <p>Find Your Squad!</p>
+          </div>
         </div>
-    )
+
+        <Post />
+      </main>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
