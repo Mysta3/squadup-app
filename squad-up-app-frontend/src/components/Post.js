@@ -1,12 +1,31 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
 
-function Post() {
-    return (
-      <div>
-        <h2>Use map function to map post here! </h2>
-   
-      </div>
-    );
+function Post(props) {
+  const { posts } = props;
+  console.log(posts);
+
+  const path = '/squadup/post/';
+
+  return (
+    <>
+      {!posts && <h1>LOADING......</h1>}
+      {posts !== undefined &&
+        posts.map(post => (
+          <div className={post.id}>
+            <div className="post">
+              <h2>{post.title}</h2>
+              <Link to={path + post.id}>
+                <img src={post.image} alt="post" />
+              </Link>
+              <small>Created: {moment(post.created_at).fromNow()}</small>
+              <h4>{post.body}</h4>
+            </div>
+          </div>
+        ))}
+    </>
+  );
 }
 
-export default Post
+export default Post;

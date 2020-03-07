@@ -2,7 +2,9 @@ import React from 'react';
 import Header from './Header';
 import Post from './Post';
 
-function Home() {
+function Home(props) {
+  const {posts} = props;
+  console.log(posts)
   return (
     <div className="home-page">
       <Header />
@@ -13,7 +15,7 @@ function Home() {
           </div>
         </div>
 
-        <Post />
+        <Post posts={posts}/>
       </main>
     </div>
   );
