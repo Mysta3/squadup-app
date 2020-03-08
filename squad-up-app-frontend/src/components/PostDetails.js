@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Comment from './Comments'
+import { Link } from 'react-router-dom';
+import Comment from './Comments';
 
 function PostDetails(props) {
   console.log(props);
@@ -18,18 +19,19 @@ function PostDetails(props) {
         console.log(err);
       });
   }, []);
-
-  // const posts = props.posts;
-  // console.log(posts)
+  const path = `/squadup/posts/`;
 
   return (
     <div className="postDetailPage">
-      <div className='postDetail'>
+      <div className="postDetail">
         <img src={post.image} alt="post" />
         <h1>{post.title}</h1>
         <small>Post by: {post.user}</small>
+        <Link to={path + post.id + '/edit'}>
+          <button>Edit</button>
+        </Link>
       </div>
-        <Comment/>
+      <Comment postId={postId} />
     </div>
   );
 }

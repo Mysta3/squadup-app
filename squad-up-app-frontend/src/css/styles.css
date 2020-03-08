@@ -53,6 +53,7 @@ body {
 
 .home-page .hero-image {
   background: url("../assets/squadUp.png") center;
+  border: 3px solid #000000;
   min-height: 40vh;
   box-shadow: 0em 0em 2em #35802d;
   margin-top: 2em;
@@ -94,6 +95,7 @@ body {
   min-height: 100vh;
 }
 .postDetailPage .postDetail {
+  padding: 2%;
   margin: 0 2%;
   background: #000000;
 }
@@ -108,6 +110,31 @@ body {
 .postDetailPage .comments h1 {
   margin-top: 0;
   text-decoration: underline;
+}
+
+.commentEditPage {
+  background: #000000;
+  text-align: center;
+  margin: 10%;
+  padding: 2%;
+}
+.commentEditPage input {
+  font-size: 2em;
+}
+.commentEditPage button {
+  font-size: 2em;
+  margin-top: 1%;
+  border-radius: 10%;
+}
+
+.postEditPage {
+  background: #000000;
+  text-align: center;
+  margin: 10%;
+  padding: 2%;
+}
+.postEditPage input {
+  margin: 2%;
 }
 
 /*# sourceMappingURL=styles.css.map */

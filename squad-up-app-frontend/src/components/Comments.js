@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-function Comments() {
+function Comments(props) {
   const [comments, setComment] = useState([]);
   const url = `http://localhost:8000/comments/`;
   useEffect(() => {
@@ -14,11 +15,11 @@ function Comments() {
         console.log(err);
       });
   }, []);
-
   const commentSorted = comments.filter(
-    comment => comment.id === comment.user
+    comment => comment.post === parseInt(props.postId)
   );
-  //   console.log(commentSorted.shift())
+const path = `/squadup/comment/`;
+  
   return (
     <>
       <div className="comments">
@@ -26,13 +27,20 @@ function Comments() {
         {!commentSorted && (
           <div>
             <h3>No Comments, BE THE FIRST! </h3>
+            <form>
+              <input type="text" name="body" placeholder="Enter Comment" />
+              <button>Submit</button>
+            </form>
           </div>
         )}
         {commentSorted &&
           commentSorted.map(comment => (
             <div className={comment.id}>
-              <p>{comment.body}</p>
-              <small>User: {comment.user}</small>
+              <span>{comment.body}</span> -<small> User: {comment.user}</small>
+              <Link to={ path+ comment.id+'/edit'}>
+                <button>Edit</button>
+              </Link>
+              <button>Delete</button>
             </div>
           ))}
       </div>

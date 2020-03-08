@@ -5,7 +5,9 @@ import Home from './components/Home';
 import Landing from './components/Landing';
 import About from './components/About';
 import PostDetails from './components/PostDetails'
+import PostEdit from './components/PostEdit'
 import './css/styles.css';
+import CommentEdit from './components/CommentEdit';
 
 const url = 'http://localhost:8000/posts/';
 
@@ -23,13 +25,42 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route exact path="/squadup/home" render={()=>{
-            return(<Home posts={posts}/>)
-          }} />
+          <Route
+            exact
+            path="/squadup/home"
+            render={() => {
+              return <Home posts={posts} />;
+            }}
+          />
           <Route path="/squadup/about" component={About} />
-          <Route path='/squadup/post/:id'render={routerProps =>{
-            return <PostDetails posts={posts} match={routerProps.match}/> 
-          }}/>
+          <Route
+            path="/squadup/post/:id"
+            render={routerProps => {
+              return <PostDetails posts={posts} match={routerProps.match} />;
+            }}
+          />
+          <Route
+            path="/squadup/comment/:id/edit"
+            render={routerProps => {
+              return (
+                <CommentEdit
+                  match={routerProps.match}
+                  history={routerProps.history}
+                />
+              );
+            }}
+          />
+          <Route
+            path="/squadup/posts/:id/edit"
+            render={routerProps => {
+              return (
+                <PostEdit
+                  match={routerProps.match}
+                  history={routerProps.history}
+                />
+              );
+            }}
+          />
         </Switch>
       </main>
     </div>
