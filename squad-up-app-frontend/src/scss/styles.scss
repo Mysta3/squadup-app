@@ -124,13 +124,15 @@ body {
   }
 }
 
-.commentEditPage {
-  background: #000000;
+.editPage {
+  background: url('../assets/squadUp.png') center;
+  border: 1px solid black;
   text-align: center;
   margin: 10%;
   padding: 2%;
   input {
     font-size: 2em;
+    margin: 2%;
   }
   button {
     font-size: 2em;
@@ -139,12 +141,15 @@ body {
   }
 }
 
-.postEditPage {
-  background: #000000;
-  text-align: center;
-  margin: 10%;
-  padding: 2%;
-  input {
-    margin: 2%;
+form {
+  background: #f5f5f5;
+  border: 3px solid $secondary-color;
+  button {
+    background: $primary-color;
+    color: $text-color;
+  }
+  button:hover {
+    background: $tertiary-color;
+    color: #f5f5f5;
   }
 }

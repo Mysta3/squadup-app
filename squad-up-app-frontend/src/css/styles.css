@@ -112,29 +112,34 @@ body {
   text-decoration: underline;
 }
 
-.commentEditPage {
-  background: #000000;
+.editPage {
+  background: url("../assets/squadUp.png") center;
+  border: 1px solid black;
   text-align: center;
   margin: 10%;
   padding: 2%;
 }
-.commentEditPage input {
+.editPage input {
   font-size: 2em;
+  margin: 2%;
 }
-.commentEditPage button {
+.editPage button {
   font-size: 2em;
   margin-top: 1%;
   border-radius: 10%;
 }
 
-.postEditPage {
-  background: #000000;
-  text-align: center;
-  margin: 10%;
-  padding: 2%;
+form {
+  background: #f5f5f5;
+  border: 3px solid #afffa6;
 }
-.postEditPage input {
-  margin: 2%;
+form button {
+  background: #35802d;
+  color: #55cc47;
+}
+form button:hover {
+  background: #6aff59;
+  color: #f5f5f5;
 }
 
 /*# sourceMappingURL=styles.css.map */

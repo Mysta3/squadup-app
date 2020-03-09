@@ -5,7 +5,8 @@ function Header() {
     <div className="navBar">
       <header>
         <nav>
-          <a href="/squadup/home">Home</a>|<a href="/squadup/about">About</a>
+          <a href="/squadup/home">Home</a>|<a href="/squadup/about">About</a>|
+          <a href="/squadup/posts/new">New Post</a>
         </nav>
       </header>
     </div>

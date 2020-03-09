@@ -46,7 +46,7 @@ function PostEdit(props) {
   return (
     <>
       <Header />
-      <div className="postEditPage">
+      <div className="editPage">
         <h1>Edit: {post.title}</h1>
         <form onSubmit={handleSubmit}>
           <input type="text" name="title" placeholder={post.title} />

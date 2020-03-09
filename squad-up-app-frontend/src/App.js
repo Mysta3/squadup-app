@@ -8,6 +8,7 @@ import PostDetails from './components/PostDetails'
 import PostEdit from './components/PostEdit'
 import './css/styles.css';
 import CommentEdit from './components/CommentEdit';
+import NewPost from './components/NewPost';
 
 const url = 'http://localhost:8000/posts/';
 
@@ -61,6 +62,7 @@ function App() {
               );
             }}
           />
+          <Route path='/squadup/posts/new' component={NewPost}/>
         </Switch>
       </main>
     </div>
