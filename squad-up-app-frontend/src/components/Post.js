@@ -4,7 +4,6 @@ import moment from 'moment';
 
 function Post(props) {
   const { posts } = props;
-  console.log(posts);
 
   const path = '/squadup/post/';
 

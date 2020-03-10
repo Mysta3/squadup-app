@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router';
 
 function SignUp() {
   const handleSubmit = event => {
@@ -44,6 +43,9 @@ function SignUp() {
         />
         <button>Submit</button>
       </form>
+      <p>
+        Or <a href="/user/login">Login</a>
+      </p>
     </div>
   );
 }

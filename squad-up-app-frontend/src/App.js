@@ -15,10 +15,10 @@ import './css/styles.css';
 const url = 'http://localhost:8000/posts/';
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [accessToken, setAccessToken] = useState([]);
-  const [refreshToken, setRefreshToken] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [storedUser, setStoredUser] = useState(
+    localStorage.getItem('storedUserName') || ''
+  );
   useEffect(() => {
     axios
       .get(url)
@@ -29,63 +29,77 @@ function App() {
         console.log(err);
       });
   }, []);
+
   return (
     <div className="App">
-        <Switch>
-          <Redirect exact from="/" to="/squadup" />
-          <Route exact path="/squadup" component={Landing} />
-          <Route path="/user/signup" component={SignUp} />
-          <Route path="/user/login" component={Login} />
-          <Route
-            exact
-            path="/squadup/home"
-            render={() => {
-              return <Home posts={posts} />;
-            }}
-          />
-          <Route path="/squadup/about" component={About} />
-          <Route
-            path="/squadup/post/:id"
-            render={routerProps => {
-              return <PostDetails posts={posts} match={routerProps.match} />;
-            }}
-          />
-          <Route
-            path="/squadup/comment/:id/edit"
-            render={routerProps => {
-              return (
-                <CommentEdit
-                  match={routerProps.match}
-                  history={routerProps.history}
-                />
-              );
-            }}
-          />
-          <Route
-            path="/squadup/posts/:id/edit"
-            render={routerProps => {
-              return (
-                <PostEdit
-                  match={routerProps.match}
-                  history={routerProps.history}
-                />
-              );
-            }}
-          />
-          <Route
-            path="/squadup/posts/new"
-            render={props => {
-              if (user) {
-                return <NewPost {...props} />;
-              } else {
-                return <Redirect to="/user/login" />;
-              }
-            }}
-          />
-        </Switch>
-        <footer>
-          <h6>Created By: SquadUp Team 2020</h6>
-        </footer>
+      <Switch>
+        <Redirect exact from="/" to="/squadup" />
+        <Route exact path="/squadup" component={Landing} />
+        <Route path="/user/signup" component={SignUp} />
+        <Route
+          path="/user/login"
+          render={props => {
+            return (
+              <Login location={props.location} setStoredUser={setStoredUser} />
+            );
+          }}
+        />
+        <Route
+          exact
+          path="/squadup/home"
+          render={() => {
+            return (
+              <Home
+                posts={posts}
+                setStoredUser={setStoredUser}
+                storedUser={storedUser}
+              />
+            );
+          }}
+        />
+        <Route path="/squadup/about" component={About} />
+        <Route
+          path="/squadup/post/:id"
+          render={routerProps => {
+            return <PostDetails posts={posts} match={routerProps.match} />;
+          }}
+        />
+        <Route
+          path="/squadup/comment/:id/edit"
+          render={routerProps => {
+            return (
+              <CommentEdit
+                match={routerProps.match}
+                history={routerProps.history}
+              />
+            );
+          }}
+        />
+        <Route
+          path="/squadup/posts/:id/edit"
+          render={routerProps => {
+            return (
+              <PostEdit
+                match={routerProps.match}
+                history={routerProps.history}
+              />
+            );
+          }}
+        />
+        <Route
+          path="/squadup/posts/new"
+          render={props => {
+            if (storedUser) {
+              return <NewPost {...props} />;
+            } else {
+              return <Redirect to="/user/login" />;
+            }
+          }}
+        />
+      </Switch>
+      <footer>
+        <h6>Created By: SquadUp Team 2020</h6>
+      </footer>
     </div>
   );
 }

@@ -4,10 +4,9 @@ import Post from './Post';
 
 function Home(props) {
   const {posts} = props;
-  console.log(posts)
   return (
     <div className="home-page">
-      <Header />
+      <Header storedUser={props.storedUser} setStoredUser={props.setStoredUser} />
       <main>
         <div className="hero-image">
           <div className='banner'>

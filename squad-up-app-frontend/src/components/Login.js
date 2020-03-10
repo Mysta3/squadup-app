@@ -1,31 +1,38 @@
 import React from 'react';
 import axios from 'axios';
 
-function Login() {
-  const verified = false;
+function Login(props) {
+  console.log(props);
+  let verified = false;
   const handleSubmit = event => {
     event.preventDefault();
     let data = {
       username: event.target.username.value,
       password: event.target.password.value
     };
-
     getUser(data);
   };
 
   const getUser = data => {
     const url = 'http://localhost:8000/users/';
-    axios.get(url).then(res => {
-      const filteredUser = res.data.filter(user => {
-        if (user.username === data.username) {
-          if (user.password === data.password) {
-            verified = true;
+    axios
+      .get(url)
+      .then(res => {
+        const filteredUser = res.data.filter(user => {
+          if (user.username === data.username) {
+            if (user.password === data.password) {
+              verified = true;
+              localStorage.setItem('storedUserName', user.username);
+              props.setStoredUser(user.username);
+            }
+          } else {
+            window.location.reload();
           }
-        } else {
-          window.location.reload();
-        }
+        });
+      })
+      .then(res => {
+        window.location.href = 'http://localhost:3000/squadup/home';
       });
-    });
   };
   return (
     <div>

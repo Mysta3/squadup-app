@@ -8,7 +8,7 @@ function Landing() {
         <img src="../squadUp.png" alt="landing-pic" />
         <p>Welcome To Paradise Gamer!</p>
         <div>
-          <Link to="/squadup/home">
+          <Link to="/user/signup">
             <button>Enter</button>
           </Link>
         </div>
