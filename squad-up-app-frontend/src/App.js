@@ -1,31 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from './components/Home';
 import Landing from './components/Landing';
 import About from './components/About';
-import PostDetails from './components/PostDetails'
-import PostEdit from './components/PostEdit'
-import './css/styles.css';
+import PostDetails from './components/PostDetails';
+import PostEdit from './components/PostEdit';
 import CommentEdit from './components/CommentEdit';
 import NewPost from './components/NewPost';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import './css/styles.css';
 
 const url = 'http://localhost:8000/posts/';
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [accessToken, setAccessToken] = useState([]);
+  const [refreshToken, setRefreshToken] = useState([]);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get(url).then(res => {
-      setPosts(res.data);
-    }).catch(err =>{
-      console.log(err)
-    })
+    axios
+      .get(url)
+      .then(res => {
+        setPosts(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }, []);
   return (
     <div className="App">
-      <main>
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Redirect exact from="/" to="/squadup" />
+          <Route exact path="/squadup" component={Landing} />
+          <Route path="/user/signup" component={SignUp} />
+          <Route path="/user/login" component={Login} />
           <Route
             exact
             path="/squadup/home"
@@ -62,9 +72,20 @@ function App() {
               );
             }}
           />
-          <Route path='/squadup/posts/new' component={NewPost}/>
+          <Route
+            path="/squadup/posts/new"
+            render={props => {
+              if (user) {
+                return <NewPost {...props} />;
+              } else {
+                return <Redirect to="/user/login" />;
+              }
+            }}
+          />
         </Switch>
-      </main>
+        <footer>
+          <h6>Created By: SquadUp Team 2020</h6>
+        </footer>
     </div>
   );
 }

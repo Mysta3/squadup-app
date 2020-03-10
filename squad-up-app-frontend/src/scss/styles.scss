@@ -142,14 +142,26 @@ body {
 }
 
 form {
-  background: #f5f5f5;
+  background: url('../assets/squadUp.png') center;
   border: 3px solid $secondary-color;
+  padding: 3%;
+  margin: auto 20%;
+  input {
+    border-radius: 3%;
+    border: 1px solid $accent-one-color;
+    padding: 1%;
+    font-size: 1rem;
+    margin: 1%;
+  }
   button {
-    background: $primary-color;
+    border-radius: 3%;
+    border: 2px solid #f5f5f5;
+    background: $secondary-color;
     color: $text-color;
+    font-size: 1.5rem;
   }
   button:hover {
-    background: $tertiary-color;
-    color: #f5f5f5;
+    background-color: #6c9767;
+    color: white;
   }
 }
