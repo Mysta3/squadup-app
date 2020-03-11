@@ -10,7 +10,6 @@ function NewPost() {
     data.title = event.target['title'].value;
     data.body = event.target['body'].value;
     data.image = event.target['image'].value;
-
     newPost(data);
   };
   const newPost = data => {

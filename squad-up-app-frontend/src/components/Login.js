@@ -36,7 +36,6 @@ function Login(props) {
   };
   return (
     <div>
-      <h1>Login Page! </h1>
       {!verified && (
         <>
           <h2>Please login</h2>

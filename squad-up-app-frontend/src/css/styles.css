@@ -130,9 +130,15 @@ body {
   margin-top: 0;
   text-decoration: underline;
 }
+.postDetailPage .comments .comment {
+  background: #000000;
+  border: 1px solid #ffff;
+  padding: 1%;
+}
 
 .editPage {
-  background: url("../assets/squadUp.png") center;
+  background: #000000;
+  border-radius: 2%;
   border: 1px solid black;
   text-align: center;
   margin: 10%;

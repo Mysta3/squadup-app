@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Header(props) {
-  console.log(props);
   const resetStoredName = () => {
     localStorage.clear();
     props.setStoredUser();
@@ -15,8 +14,9 @@ function Header(props) {
           <a href="/squadup/about">About</a>
           <a href="/squadup/posts/new">New Post</a>
           {props.storedUser && (
-            <button onClick={resetStoredName}> Logout</button>
-          )}
+              <button onClick={resetStoredName}> Logout</button>
+            )}
+          {!props.storedUser && <a href="/user/signup">Sign Up</a>}
           {!props.storedUser && <a href="/user/login">Login</a>}
         </nav>
       </header>

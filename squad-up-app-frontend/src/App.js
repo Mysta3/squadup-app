@@ -13,31 +13,27 @@ import Login from './components/Login';
 import './css/styles.css';
 import Header from './components/Header';
 
-
 const url = 'http://localhost:8000/posts/';
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [users, setUsers] = useState([]);
   const [storedUser, setStoredUser] = useState(
     localStorage.getItem('storedUserName') || ''
   );
   useEffect(() => {
-    axios
-      .get(url)
-      .then(res => {
-        setPosts(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+   axios.all([axios.get(url), axios.get('http://localhost:8000/users/')]).then(
+     axios.spread((postsRes, usersRes) => {
+       // do something with both responses
+       setPosts(postsRes.data);
+       setUsers(usersRes.data);
+     })
+   );
   }, []);
 
   return (
     <div className="App">
-      <Header
-        storedUser={storedUser}
-        setStoredUser={setStoredUser}
-      />
+      <Header storedUser={storedUser} setStoredUser={setStoredUser} />
       <Switch>
         <Redirect exact from="/" to="/squadup" />
         <Route exact path="/squadup" component={Landing} />
@@ -70,6 +66,7 @@ function App() {
             return (
               <PostDetails
                 posts={posts}
+                users={users}
                 match={routerProps.match}
                 setStoredUser={setStoredUser}
                 storedUser={storedUser}
