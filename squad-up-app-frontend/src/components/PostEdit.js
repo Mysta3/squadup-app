@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
 import axios from 'axios';
 
 function PostEdit(props) {
@@ -36,7 +35,7 @@ function PostEdit(props) {
         console.log('Success' + res);
       })
       .then(res => {
-        window.location.href = 'http://localhost:3000/squadup/home';
+        window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
       })
       .catch(err => {
         console.log(err);
@@ -45,7 +44,6 @@ function PostEdit(props) {
 
   return (
     <>
-      {/* <Header /> */}
       <div className="editPage">
         <h1>Edit: {post.title}</h1>
         <form onSubmit={handleSubmit}>

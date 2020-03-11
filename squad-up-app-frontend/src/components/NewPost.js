@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 import axios from 'axios';
 
 function NewPost() {
@@ -19,7 +18,7 @@ function NewPost() {
         console.log('Success' + res);
       })
       .then(res => {
-        window.location.href = 'http://localhost:3000/squadup/home';
+        window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
       })
       .catch(err => {
         console.log(err);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from './Header';
+
 
 function CommentEdit(props) {
   const [comment, setComment] = useState([]);
@@ -38,7 +38,6 @@ function CommentEdit(props) {
   };
   return (
     <>
-      {/* <Header /> */}
       <div className="editPage">
         <h1>Edit Your Comment</h1>
         <form onSubmit={handleSubmit}>

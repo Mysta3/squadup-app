@@ -167,6 +167,10 @@ body {
   }
 }
 
+input:focus{
+  border: 2px solid $tertiary-color;
+  background: #ffff;
+}
 form {
   background: url('../assets/squadUp.png') center;
   border: 3px solid $secondary-color;

@@ -24,7 +24,7 @@ function PostDetails(props) {
     axios
       .delete(`http://localhost:8000/posts/${parseInt(postId)}`)
       .then(res => {
-        window.location.href = 'http://localhost:3000/squadup/home';
+        window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
       })
       .catch(err => {
         console.log(err);

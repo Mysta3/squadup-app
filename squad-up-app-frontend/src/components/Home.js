@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header';
 import Post from './Post';
 
 function Home(props) {

@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 function Login(props) {
-  console.log(props);
   let verified = false;
   const handleSubmit = event => {
     event.preventDefault();
@@ -12,13 +11,15 @@ function Login(props) {
     };
     getUser(data);
   };
+  // mstallings.dev
 
   const getUser = data => {
     const url = 'http://localhost:8000/users/';
     axios
       .get(url)
       .then(res => {
-        const filteredUser = res.data.filter(user => {
+        // eslint-disable-next-line
+        res.data.filter(user => {
           if (user.username === data.username) {
             if (user.password === data.password) {
               verified = true;
@@ -31,7 +32,10 @@ function Login(props) {
         });
       })
       .then(res => {
-        window.location.href = 'http://localhost:3000/squadup/home';
+        window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
   return (
