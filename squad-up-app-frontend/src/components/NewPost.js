@@ -28,12 +28,11 @@ function NewPost() {
   };
   return (
     <div>
-      <Header />
-      <main className='editPage'>
+      <main className="editPage">
         <form onSubmit={handleSubmit}>
-          <input type="text" name="title" placeholder='title' required />
-          <input type="text" name="body" placeholder='message' required />
-          <input type="text" name="image" placeholder='image url' required />
+          <input type="text" name="title" placeholder="title" required />
+          <input type="text" name="body" placeholder="message" required />
+          <input type="text" name="image" placeholder="image url" required />
           <button>Submit</button>
         </form>
       </main>

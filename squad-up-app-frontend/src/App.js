@@ -11,6 +11,8 @@ import NewPost from './components/NewPost';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import './css/styles.css';
+import Header from './components/Header';
+
 
 const url = 'http://localhost:8000/posts/';
 
@@ -32,6 +34,10 @@ function App() {
 
   return (
     <div className="App">
+      <Header
+        storedUser={storedUser}
+        setStoredUser={setStoredUser}
+      />
       <Switch>
         <Redirect exact from="/" to="/squadup" />
         <Route exact path="/squadup" component={Landing} />
@@ -61,7 +67,14 @@ function App() {
         <Route
           path="/squadup/post/:id"
           render={routerProps => {
-            return <PostDetails posts={posts} match={routerProps.match} />;
+            return (
+              <PostDetails
+                posts={posts}
+                match={routerProps.match}
+                setStoredUser={setStoredUser}
+                storedUser={storedUser}
+              />
+            );
           }}
         />
         <Route
@@ -71,6 +84,8 @@ function App() {
               <CommentEdit
                 match={routerProps.match}
                 history={routerProps.history}
+                setStoredUser={setStoredUser}
+                storedUser={storedUser}
               />
             );
           }}
@@ -82,6 +97,8 @@ function App() {
               <PostEdit
                 match={routerProps.match}
                 history={routerProps.history}
+                setStoredUser={setStoredUser}
+                storedUser={storedUser}
               />
             );
           }}

@@ -8,22 +8,20 @@ function Post(props) {
   const path = '/squadup/post/';
 
   return (
-    <>
+    <div className="postContainer">
       {!posts && <h1>LOADING......</h1>}
       {posts !== undefined &&
         posts.map(post => (
-          <div key={post.id}>
-            <div className="post">
+            <div key={post.id} className="post">
               <h2>{post.title}</h2>
               <Link to={path + post.id}>
                 <img src={post.image} alt="post" />
               </Link>
-              <small>Created: {moment(post.created_at).fromNow()}</small>
+              <p>Created: {moment(post.created_at).fromNow()}</p>
               <h4>{post.body}</h4>
             </div>
-          </div>
         ))}
-    </>
+    </div>
   );
 }
 

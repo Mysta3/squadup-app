@@ -6,7 +6,6 @@ function Home(props) {
   const {posts} = props;
   return (
     <div className="home-page">
-      <Header storedUser={props.storedUser} setStoredUser={props.setStoredUser} />
       <main>
         <div className="hero-image">
           <div className='banner'>

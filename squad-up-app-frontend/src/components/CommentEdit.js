@@ -38,7 +38,7 @@ function CommentEdit(props) {
   };
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="editPage">
         <h1>Edit Your Comment</h1>
         <form onSubmit={handleSubmit}>

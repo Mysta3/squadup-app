@@ -25,8 +25,10 @@ function SignUp() {
       });
   };
   return (
-    <div>
-      <h1>Sign Up Here!</h1>
+    <div className="signUpPage">
+      <h1>
+        Sign Up Here Or <a href="/user/login">Login</a>
+      </h1>
       <form onSubmit={handleSubmit}>
         <input
           type="username"
@@ -43,9 +45,6 @@ function SignUp() {
         />
         <button>Submit</button>
       </form>
-      <p>
-        Or <a href="/user/login">Login</a>
-      </p>
     </div>
   );
 }

@@ -35,7 +35,7 @@ function PostDetails(props) {
 
   return (
     <div className="postDetailPage">
-      <Header />
+      {/* <Header /> */}
       <div className="postDetail">
         <img src={post.image} alt="post" />
         <h1>{post.title}</h1>

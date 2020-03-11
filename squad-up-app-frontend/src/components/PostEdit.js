@@ -45,7 +45,7 @@ function PostEdit(props) {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="editPage">
         <h1>Edit: {post.title}</h1>
         <form onSubmit={handleSubmit}>

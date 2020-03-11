@@ -1,10 +1,13 @@
 import React from 'react';
 import Header from './Header';
 
-function About() {
+function About(props) {
   return (
     <div>
-      <Header />
+      {/* <Header
+        storedUser={props.storedUser}
+        setStoredUser={props.setStoredUser}
+      /> */}
       <h1>About Page</h1>
       <p>My Image</p>
       <p>Bio of tech used to create & purpose behind it.</p>
