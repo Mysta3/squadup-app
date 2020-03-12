@@ -13,7 +13,7 @@ import Login from './components/Login';
 import './css/styles.css';
 import Header from './components/Header';
 
-const url = 'http://localhost:8000/posts/';
+const url = 'https://squadup-db.herokuapp.com/posts/';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -22,13 +22,18 @@ function App() {
     localStorage.getItem('storedUserName') || ''
   );
   useEffect(() => {
-   axios.all([axios.get(url), axios.get('http://localhost:8000/users/')]).then(
-     axios.spread((postsRes, usersRes) => {
-       // do something with both responses
-       setPosts(postsRes.data);
-       setUsers(usersRes.data);
-     })
-   );
+    axios
+      .all([
+        axios.get(url),
+        axios.get('https://squadup-db.herokuapp.com/users/')
+      ])
+      .then(
+        axios.spread((postsRes, usersRes) => {
+          // do something with both responses
+          setPosts(postsRes.data);
+          setUsers(usersRes.data);
+        })
+      );
   }, []);
 
   return (

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Comments(props) {
   const [comments, setComment] = useState([]);
-  const url = `http://localhost:8000/comments/`;
+  const url = `https://squadup-db.herokuapp.com/comments/`;
   useEffect(() => {
     axios
       .get(url)
@@ -14,6 +14,7 @@ function Comments(props) {
       .catch(err => {
         console.log(err);
       });
+    //eslint-disable-next-line
   }, []);
   const commentSorted = comments.filter(
     comment => comment.post === parseInt(props.postId)
@@ -70,7 +71,9 @@ function Comments(props) {
                   <button
                     onClick={() => {
                       axios
-                        .delete(`http://localhost:8000/comments/${comment.id}`)
+                        .delete(
+                          `https://squadup-db.herokuapp.com/comments/${comment.id}`
+                        )
                         .then(res => {
                           window.location.reload();
                         })

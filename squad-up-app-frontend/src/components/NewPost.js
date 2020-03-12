@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 function NewPost() {
-  const url = 'http://localhost:8000/posts/';
+  const url = 'https://squadup-db.herokuapp.com/posts/';
   const handleSubmit = event => {
     event.preventDefault();
     let data = {};

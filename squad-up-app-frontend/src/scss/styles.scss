@@ -1,4 +1,5 @@
 $background-color: #323232;
+$background-color2: #3232327e;
 $primary-color: #35802d;
 $secondary-color: #afffa6;
 $tertiary-color: #6aff59;
@@ -167,7 +168,7 @@ body {
   }
 }
 
-input:focus{
+input:focus {
   border: 2px solid $tertiary-color;
   background: #ffff;
 }

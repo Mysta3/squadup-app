@@ -3,12 +3,13 @@ import axios from 'axios';
 
 function PostEdit(props) {
   const postId = parseInt(props.match.params.id);
-  const url = `http://localhost:8000/posts/${postId}`;
+  const url = `https://squadup-db.herokuapp.com/posts/${postId}`;
   const [post, setPost] = useState([]);
   useEffect(() => {
     axios.get(url).then(res => {
       setPost(res.data);
     });
+    //eslint-disable-next-line
   }, []);
 
   const handleSubmit = event => {

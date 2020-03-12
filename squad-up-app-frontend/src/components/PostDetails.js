@@ -7,7 +7,7 @@ function PostDetails(props) {
   console.log(props);
   const postId = props.match.params.id;
   const [post, setPost] = useState([]);
-  const url = `http://localhost:8000/posts/${postId}`;
+  const url = `https://squadup-db.herokuapp.com/posts/${postId}`;
   useEffect(() => {
     axios
       .get(url)
@@ -17,12 +17,13 @@ function PostDetails(props) {
       .catch(err => {
         console.log(err);
       });
+    //eslint-disable-next-line
   }, []);
 
   const path = `/squadup/posts/`;
   const handleClick = () => {
     axios
-      .delete(`http://localhost:8000/posts/${parseInt(postId)}`)
+      .delete(`https://squadup-db.herokuapp.com/posts/${parseInt(postId)}`)
       .then(res => {
         window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
       })

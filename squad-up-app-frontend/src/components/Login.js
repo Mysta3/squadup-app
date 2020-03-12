@@ -14,7 +14,7 @@ function Login(props) {
   // mstallings.dev
 
   const getUser = data => {
-    const url = 'http://localhost:8000/users/';
+    const url = 'https://squadup-db.herokuapp.com/users/';
     axios
       .get(url)
       .then(res => {

@@ -11,7 +11,7 @@ function SignUp() {
   };
 
   const createuser = data => {
-    const url = 'http://localhost:8000/users/';
+    const url = 'https://squadup-db.herokuapp.com/users/';
     axios
       .post(url, data)
       .then(res => {

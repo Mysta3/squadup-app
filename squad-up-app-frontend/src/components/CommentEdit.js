@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 function CommentEdit(props) {
   const [comment, setComment] = useState([]);
-  console.log(props.history.location)
+  console.log(props.history.location);
   useEffect(() => {
     axios
       .get(url)
@@ -14,9 +13,10 @@ function CommentEdit(props) {
       .catch(err => {
         console.log(err);
       });
+    //eslint-disable-next-line
   }, []);
   const postID = props.match.params.id;
-  const url = `http://localhost:8000/comments/${parseInt(postID)}`;
+  const url = `https://squadup-db.herokuapp.com/comments/${parseInt(postID)}`;
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -29,12 +29,12 @@ function CommentEdit(props) {
     axios
       .put(url, data)
       .then(res => {
-      console.log('Success' + res)
+        console.log('Success' + res);
       })
       .catch(err => {
         console.log(err);
       });
-      props.history.push('/squadup/home');
+    props.history.push('/squadup/home');
   };
   return (
     <>

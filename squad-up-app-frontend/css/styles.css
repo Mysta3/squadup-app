@@ -1,0 +1,223 @@
+body {
+  background: #323232;
+  color: #55cc47;
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.landing-page {
+  max-width: 100vw;
+  margin: 10vh;
+  text-align: center;
+  font-size: 5vw;
+}
+
+.landing-page button {
+  background-color: #afffa6;
+  border: 3px solid #000000;
+  padding: 3vw;
+  font-size: 3vw;
+  border-radius: 2vw;
+  box-shadow: 0px 3px 10px #578053;
+  color: #000000;
+}
+.landing-page button:hover {
+  background-color: #6c9767;
+  color: white;
+}
+.landing-page img {
+  margin-bottom: 0;
+}
+.landing-page p {
+  margin-top: 0;
+}
+
+.navBar {
+  background: rgba(248, 248, 248, 0.13);
+  box-shadow: inset 0 0 0.5em #ffff, 0em 0em 1em black;
+  margin: 0;
+  padding: 1%;
+}
+.navBar header {
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+  font-size: 4vh;
+}
+.navBar a {
+  margin: 0 2em;
+  color: #55cc47;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black;
+}
+.navBar a:hover {
+  color: #f5f5f5;
+}
+
+.home-page .hero-image {
+  background: url("../assets/squadUp.png") center;
+  border: 3px solid #0000001e;
+  min-height: 10vh;
+  box-shadow: 0em 0em 1em #35802d;
+  margin-top: 1em;
+}
+.home-page p {
+  color: #ffff;
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 0;
+  text-decoration: underline;
+}
+.home-page .banner {
+  border-radius: 1%;
+  background: #000000;
+  text-align: center;
+  min-height: 4vh;
+  max-width: 40vw;
+  margin: 4% auto;
+  padding: 1rem;
+  box-shadow: 0em 0em 2em #ffff;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.post {
+  border: 1px solid rgba(248, 248, 248, 0.13);
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+  padding: 1%;
+  max-width: 20vw;
+  text-align: center;
+  background: #202020ee;
+  margin: 2%;
+  box-shadow: 0em 0.6rem 0.6rem #29961b;
+  font-size: 1rem;
+}
+.post img {
+  max-height: 40vh;
+  max-width: 20vw;
+  border: 3px solid black;
+}
+.post p {
+  font-size: 0.2%;
+  text-decoration: none;
+}
+
+.postDetailPage {
+  text-align: center;
+  background: url("../assets/squadUp.png") center;
+  min-height: 100vh;
+}
+.postDetailPage .postDetail {
+  padding: 2%;
+  margin: 0 2%;
+  background: #000000;
+}
+.postDetailPage .postDetail h1 {
+  margin-bottom: 0;
+}
+.postDetailPage .comments {
+  background: #f5f5f5;
+  min-height: 30vh;
+  margin: 0 2%;
+}
+.postDetailPage .comments h1 {
+  margin-top: 0;
+  text-decoration: underline;
+}
+.postDetailPage .comments .comment {
+  background: #000000;
+  border: 1px solid #ffff;
+  padding: 1%;
+}
+
+.editPage {
+  background: #000000;
+  border-radius: 2%;
+  border: 1px solid black;
+  text-align: center;
+  margin: 10%;
+  padding: 2%;
+}
+.editPage input {
+  font-size: 2em;
+  margin: 2%;
+}
+.editPage button {
+  font-size: 2em;
+  margin-top: 1%;
+  border-radius: 10%;
+}
+
+input:focus {
+  border: 2px solid #6aff59;
+  background: #ffff;
+}
+
+form {
+  background: url("../assets/squadUp.png") center;
+  border: 3px solid #afffa6;
+  padding: 3%;
+  margin: auto 20%;
+}
+form input {
+  border-radius: 3%;
+  background: #dadada;
+  border: 1px solid #578053;
+  padding: 1%;
+  font-size: 1rem;
+  margin: 1%;
+}
+form button {
+  border-radius: 3%;
+  border: 2px solid #f5f5f5;
+  background: #afffa6;
+  color: #000000;
+  font-size: 1.5rem;
+}
+form button:hover {
+  background-color: #6c9767;
+  color: white;
+}
+
+button {
+  font-family: "Anton", sans-serif;
+  border-radius: 5%;
+  border: 2px solid #f5f5f5;
+  background: #35802d;
+  color: #55cc47;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  background-color: #6c9767;
+  color: white;
+}
+
+.signUpPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100vw;
+  padding: 2%;
+}
+.signUpPage p {
+  font-size: 2rem;
+}
+.signUpPage a {
+  color: #55cc47;
+}
+
+footer {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  color: #ffff;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
