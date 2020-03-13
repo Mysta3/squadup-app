@@ -291,6 +291,10 @@ footer {
   .loginPage button {
     font-size: 2vh;
   }
+
+  .container img {
+    max-width: 100vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
