@@ -35,13 +35,12 @@ function PostDetails(props) {
     width: '50%',
     height: '10%',
     padding: '0'
-  }
+  };
 
   return (
     <div className="postDetailPage">
       <div className="postDetail">
         <img style={imgStyle} src={post.image} alt="post" />
-        <p>User: {props.storedUser}</p>
         <h1>{post.title}</h1>
         {props.storedUser && (
           <Link to={path + post.id + '/edit'}>

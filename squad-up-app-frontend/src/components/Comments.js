@@ -55,7 +55,6 @@ function Comments(props) {
           commentSorted.map(comment => (
             <div className="comment" key={comment.id}>
               <span>{comment.body}</span> -
-              <small> User: {comment.username} </small>
               <div>
                 {props.storedUser && (
                   <Link to={path + comment.id + '/edit'}>
