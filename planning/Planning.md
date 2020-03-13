@@ -7,11 +7,22 @@
 
 ## FrontEnd
 
+### Structure
+
 - App
   - Header
-    continue structure tommorrow
+  - Landing Page
+  - SignUp Page
+  - Home page
+    - Posts
+  - PostDetail
+    - Comments
+  - CommentEdit
+  - NewPost Page
 
-talk about approaches taken
+### Progress Tracking
+
+- Trello Board
 
 ## BackEnd
 

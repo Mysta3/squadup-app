@@ -4,6 +4,9 @@
 
 SQUUUAAAD!!!! Made for gamers, by a gamer! Ready to become an apex champion? A Call of Duty king? How about just have a dedicated team to run the same games with? Well this is the app for you! This app was created for gamers to come and find other gamers who match their schedule. It's an open forum setup in which you pick a post (or create one) and comment with your gamertag underneath the one you would like to play.
 
+## Purpose
+The purpose of creating this was to not only get comfortable using an uncomfortable technology stack but also to create something that would hopefully solve an issue that people face. Personally, me and my friends always have issues connecting with each other due to the massive time differences, so it would be great to create a space that's easily accessible to find other players. 
+
 ![Squadup  App in Browser](https://i.imgur.com/tJBSQpn.png)
 
 ## User Stories
@@ -26,6 +29,10 @@ SQUUUAAAD!!!! Made for gamers, by a gamer! Ready to become an apex champion? A C
 
 - Users authorization
 - Username will appear underneath posts as well as with comments.
+- Incorporate JWT
+- User Profile page that displays all posts they created or commented on.
+- Incorporate some testing using Jest/Enzyme.
+- Rating system for players so that you can see how well a player is on a team.
 
 # Installation
 
