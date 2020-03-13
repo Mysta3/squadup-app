@@ -1,10 +1,11 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import '../css/styles.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../css/styles.css';
 
 function Landing() {
-    return (
-      <div className="landing-page">
+  return (
+    <div className="landing-page">
+      <div className='container'>
         <img src="../squadUp.png" alt="landing-pic" />
         <p>Welcome To Paradise Gamer!</p>
         <div>
@@ -13,7 +14,8 @@ function Landing() {
           </Link>
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
-export default Landing
+export default Landing;

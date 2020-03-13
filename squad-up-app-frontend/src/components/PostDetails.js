@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Comment from './Comments';
 
 function PostDetails(props) {
-  console.log(props);
   const postId = props.match.params.id;
   const [post, setPost] = useState([]);
   const url = `https://squadup-db.herokuapp.com/posts/${postId}`;
@@ -32,12 +31,17 @@ function PostDetails(props) {
       });
   };
 
+  var imgStyle = {
+    width: '50%',
+    height: '10%',
+    padding: '0'
+  }
+
   return (
     <div className="postDetailPage">
       <div className="postDetail">
-        <img src={post.image} alt="post" />
-        <br />
-        <small>User: {post.user}</small>
+        <img style={imgStyle} src={post.image} alt="post" />
+        <p>User: {props.storedUser}</p>
         <h1>{post.title}</h1>
         {props.storedUser && (
           <Link to={path + post.id + '/edit'}>

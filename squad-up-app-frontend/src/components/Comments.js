@@ -47,11 +47,6 @@ function Comments(props) {
     <>
       <div className="comments">
         <h1>Comments</h1>
-        {!commentSorted && (
-          <div>
-            <h3>No Comments, BE THE FIRST! </h3>
-          </div>
-        )}
         <form onSubmit={handleSubmit}>
           <input type="text" name="body" placeholder="Comment - username" />
           <button>Submit</button>
