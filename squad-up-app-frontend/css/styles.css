@@ -8,6 +8,7 @@ body {
 }
 
 .landing-page {
+  background: linear-gradient(#323232, rgba(50, 50, 50, 0.4)), url("https://media.giphy.com/media/kjFyZgX4rSZby/giphy.gif");
   max-width: 100vw;
   margin: 10vh;
   text-align: center;

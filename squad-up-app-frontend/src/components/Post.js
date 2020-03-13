@@ -13,7 +13,7 @@ function Post(props) {
       {posts !== undefined &&
         posts.map(post => (
             <div key={post.id} className="post">
-              <h2>{post.title}</h2>
+              <h3>{post.title}</h3>
               <Link to={path + post.id}>
                 <img src={post.image} alt="post" />
               </Link>

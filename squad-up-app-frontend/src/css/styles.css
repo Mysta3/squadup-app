@@ -5,15 +5,23 @@ body {
   font-family: "Anton", sans-serif;
   min-height: 100vh;
   min-width: 100vw;
+  overflow: scroll;
 }
 
 .landing-page {
   max-width: 100vw;
-  margin: 10vh;
+  min-height: 100vh;
+  margin: 0vh;
   text-align: center;
   font-size: 5vw;
 }
-
+.landing-page .container {
+  background: linear-gradient(#323232, rgba(50, 50, 50, 0.8)), url("https://media.giphy.com/media/xTiTnB3PhIZRIZb4hq/giphy.gif");
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+}
 .landing-page button {
   background-color: #afffa6;
   border: 3px solid #000000;
@@ -22,16 +30,19 @@ body {
   border-radius: 2vw;
   box-shadow: 0px 3px 10px #578053;
   color: #000000;
+  margin-bottom: 2%;
 }
 .landing-page button:hover {
   background-color: #6c9767;
   color: white;
 }
 .landing-page img {
+  margin-top: 2%;
   margin-bottom: 0;
 }
 .landing-page p {
   margin-top: 0;
+  margin-bottom: 1%;
 }
 
 .navBar {
@@ -39,15 +50,18 @@ body {
   box-shadow: inset 0 0 0.5em #ffff, 0em 0em 1em black;
   margin: 0;
   padding: 1%;
+  min-width: 100vw;
 }
 .navBar header {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   padding-top: 0;
-  font-size: 4vh;
+  font-size: 4vw;
+  flex-wrap: wrap;
 }
 .navBar a {
-  margin: 0 2em;
+  margin: 0 1em;
   color: #55cc47;
   text-decoration: none;
   text-shadow: 1px 1px 2px black;
@@ -64,9 +78,9 @@ body {
   margin-top: 1em;
 }
 .home-page p {
-  color: #ffff;
+  color: white;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 3vw;
   padding: 0;
   text-decoration: underline;
 }
@@ -99,13 +113,17 @@ body {
   font-size: 1rem;
 }
 .post img {
-  max-height: 40vh;
   max-width: 20vw;
   border: 3px solid black;
 }
+.post h2 {
+  max-height: 10vh;
+}
 .post p {
-  font-size: 0.2%;
+  font-size: 1vw;
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
+  margin-top: 0;
 }
 
 .postDetailPage {
@@ -218,6 +236,61 @@ footer {
   width: 100%;
   color: #ffff;
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post {
+    min-width: 100vw;
+    margin: 3% 0;
+  }
+  .post h3 {
+    font-size: 5vh;
+    padding: 0;
+    margin: 0;
+  }
+  .post img {
+    min-width: 50vw;
+  }
+  .post p {
+    font-size: 2vw;
+  }
+  .post h4 {
+    font-size: 5vw;
+    padding: 0;
+    margin: 0;
+  }
+
+  .postDetailPage p {
+    font-size: 3vw;
+  }
+
+  .comments h1 {
+    margin-bottom: 0;
+  }
+  .comments form {
+    margin-bottom: 2%;
+  }
+  .comments form button {
+    font-size: 2vh;
+  }
+
+  .signUpPage button {
+    font-size: 2vh;
+  }
+
+  .loginPage button {
+    font-size: 2vh;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
