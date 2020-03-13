@@ -117,7 +117,7 @@ function App() {
         />
       </Switch>
       <footer>
-        <h6>Created By: SquadUp Team 2020</h6>
+        <h6>Created By: The SquadUp Team 2020</h6>
       </footer>
     </div>
   );

@@ -231,6 +231,32 @@ button:hover {
   color: #55cc47;
 }
 
+.aboutContainer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.aboutContainer .aboutPage {
+  color: #f5f5f5;
+  max-width: 40vw;
+  margin: 1%;
+  background: #292929;
+  border: 8px solid #afffa6;
+  box-shadow: 0px 10px 35px #35802d;
+  border-radius: 5%;
+}
+.aboutContainer .aboutPage img {
+  border-radius: 15%;
+  border: 3px solid #f5f5f5;
+}
+.aboutContainer .paragraphAbout {
+  background: #000000;
+  padding: 2%;
+  text-shadow: 1px 1px 2px #000000;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
 footer {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
@@ -302,6 +328,15 @@ footer {
   .editPage input {
     margin: 0;
     font-size: 4vw;
+  }
+
+  .aboutContainer {
+    min-width: 100vw;
+  }
+  .aboutContainer .aboutPage {
+    margin: 4%;
+    font-size: 4vw;
+    min-width: 90vw;
   }
 }
 
