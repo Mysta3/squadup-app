@@ -295,6 +295,14 @@ footer {
   .container img {
     max-width: 100vw;
   }
+
+  .editPage form {
+    margin: 0;
+  }
+  .editPage input {
+    margin: 0;
+    font-size: 4vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

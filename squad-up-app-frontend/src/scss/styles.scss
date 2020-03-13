@@ -168,7 +168,6 @@ body {
 }
 
 .editPage {
-  // background: url('../assets/squadUp.png') center;
   background: #000000;
   border-radius: 2%;
   border: 1px solid black;
@@ -314,6 +313,17 @@ footer {
   .container{
     img{
       max-width: 100vw;
+    }
+  }
+
+  .editPage{
+   
+    form{
+      margin: 0;
+    }
+    input{
+      margin: 0;
+      font-size: 4vw;
     }
   }
 }
