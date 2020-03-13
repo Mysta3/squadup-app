@@ -109,7 +109,9 @@ body {
 
 .postContainer {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .post {
@@ -283,6 +285,7 @@ footer {
   .postContainer {
     flex-direction: column;
     align-items: center;
+
   }
   .post {
     min-width: 100vw;
