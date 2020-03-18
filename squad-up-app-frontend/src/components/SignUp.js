@@ -30,7 +30,7 @@ function SignUp(props) {
   return (
     <div className="signUpPage">
       <h1>
-        Sign Up Here Or <a href="/user/login">Login</a>
+        Sign Up Here Or <a href="/user/login"> Login</a>
       </h1>
       <form onSubmit={handleSubmit}>
         <input
