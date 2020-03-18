@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 function Login(props) {
-  console.log(props)
+  console.log(props);
   // jwt piece //
   useEffect(() => {
     if (props.logged_in) {
       axios
-        .get('http://localhost:8000/current_user/', {
+        .get('https://squadup-db.herokuapp.com/current_user/', {
           headers: {
             Authorization: `JWT ${localStorage.getItem('token')}`
           }
@@ -31,16 +31,16 @@ function Login(props) {
   // mstallings.dev
 
   const getUser = data => {
-    const url = 'http://localhost:8000/token-auth';
+    const url = 'https://squadup-db.herokuapp.com/token-auth';
     axios
       .post(url)
       .then(res => {
-        localStorage.setItem('token',res.token);
-        props.setLoggedIn(true)
-        props.setUsername(res.username)
+        localStorage.setItem('token', res.token);
+        props.setLoggedIn(true);
+        props.setUsername(res.username);
       })
       .then(res => {
-        window.location.href = 'http://localhost:3000/squadup/home';
+        window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
       })
       .catch(err => {
         console.log(err);

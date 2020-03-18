@@ -21,7 +21,7 @@ function SignUp(props) {
         props.setUsername(res.username);
       })
       .then(res => {
-        window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
+        window.location.href = 'https://squadup-app.herokuapp.com/user/login';
       })
       .catch(err => {
         console.log(err);
