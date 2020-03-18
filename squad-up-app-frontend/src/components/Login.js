@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 
 function Login(props) {
-  let verified = false;
+  console.log(props)
+  // jwt piece //
+  useEffect(() => {
+    if (props.logged_in) {
+      axios
+        .get('http://localhost:8000/current_user/', {
+          headers: {
+            Authorization: `JWT ${localStorage.getItem('token')}`
+          }
+        })
+        .then(res => {
+          props.setUsername(res.username);
+        });
+    }
+    // eslint-disable-next-line
+  }, []);
+  //end of jwt piece//
+
   const handleSubmit = event => {
     event.preventDefault();
     let data = {
@@ -14,33 +31,24 @@ function Login(props) {
   // mstallings.dev
 
   const getUser = data => {
-    const url = 'https://squadup-db.herokuapp.com/users/';
+    const url = 'http://localhost:8000/token-auth';
     axios
-      .get(url)
+      .post(url)
       .then(res => {
-        // eslint-disable-next-line
-        res.data.filter(user => {
-          if (user.username === data.username) {
-            if (user.password === data.password) {
-              verified = true;
-              localStorage.setItem('storedUserName', user.username);
-              props.setStoredUser(user.username);
-            }
-          } else {
-            window.location.reload();
-          }
-        });
+        localStorage.setItem('token',res.token);
+        props.setLoggedIn(true)
+        props.setUsername(res.username)
       })
       .then(res => {
-        window.location.href = 'https://squadup-app.herokuapp.com/squadup/home';
+        window.location.href = 'http://localhost:3000/squadup/home';
       })
       .catch(err => {
         console.log(err);
       });
   };
   return (
-    <div className='loginPage'>
-      {!verified && (
+    <div className="loginPage">
+      {!props.logged_in && (
         <>
           <h2>Please login</h2>
           <form onSubmit={handleSubmit}>
