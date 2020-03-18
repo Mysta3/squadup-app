@@ -3,9 +3,11 @@ import React from 'react';
 function Header(props) {
   const resetStoredName = () => {
     localStorage.clear();
+    localStorage.removeItem('token');
     props.setStoredUser();
+    props.setLoggedIn(false);
+    props.setUsername('Guest');
   };
-  console.log(props)
 
   const logged_out_nav = (
     <header>
@@ -28,9 +30,14 @@ function Header(props) {
         <button onClick={resetStoredName}> Logout</button>
       </nav>
     </header>
-  )
+  );
 
-  return <div className="navBar"> {props.storedUser ? logged_in_nav: logged_out_nav}</div>
+  return (
+    <div className="navBar">
+      {' '}
+      {props.logged_in ? logged_in_nav : logged_out_nav}
+    </div>
+  );
 }
 
 export default Header;
