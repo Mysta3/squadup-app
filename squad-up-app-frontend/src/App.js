@@ -21,11 +21,7 @@ function App() {
   const [storedUser, setStoredUser] = useState(
     localStorage.getItem('storedUserName') || ''
   );
-  const [logged_in, setLoggedIn] = useState(
-    localStorage.getItem('token') ? true : false
-  );
-  const [username, setUsername] = useState([]);
-
+ 
   useEffect(() => {
     axios
       .all([
@@ -41,38 +37,20 @@ function App() {
       );
   }, []);
 
-  console.log(username);
+
 
   return (
     <div className="App">
-      <Header
-        storedUser={storedUser}
-        setStoredUser={setStoredUser}
-        setLoggedIn={setLoggedIn}
-        setUsername={setUsername}
-      />
+      <Header storedUser={storedUser} setStoredUser={setStoredUser} />
       <Switch>
         <Redirect exact from="/" to="/squadup" />
         <Route exact path="/squadup" component={Landing} />
-        <Route
-          path="/user/signup"
-          render={() => {
-            return (
-              <SignUp setLoggedIn={setLoggedIn} setUsername={setUsername} />
-            );
-          }}
-        />
+        <Route path="/user/signup" component={SignUp} />
         <Route
           path="/user/login"
           render={props => {
             return (
-              <Login
-                location={props.location}
-                setStoredUser={setStoredUser}
-                setUsername={setUsername}
-                setLoggedIn={setLoggedIn}
-                logged_in={logged_in}
-              />
+              <Login location={props.location} setStoredUser={setStoredUser} />
             );
           }}
         />

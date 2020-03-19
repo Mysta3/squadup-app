@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-function SignUp(props) {
+function SignUp() {
   const handleSubmit = event => {
     event.preventDefault();
     let data = {};
@@ -16,9 +16,6 @@ function SignUp(props) {
       .post(url, data)
       .then(res => {
         console.log('Success: ' + data);
-        localStorage.setItem('token', res.token);
-        props.setLoggedIn(true);
-        props.setUsername(res.username);
       })
       .then(res => {
         window.location.href = 'https://squadup-app.herokuapp.com/user/login';
